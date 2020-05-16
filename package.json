@@ -40,6 +40,4 @@
       "pre-push": "surge --hospice ./ --domain ehospice.surge.sh"
     }
   }
-
-
 }
