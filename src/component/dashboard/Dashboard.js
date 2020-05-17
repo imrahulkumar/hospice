@@ -9,7 +9,7 @@ class Dashboard extends Component {
 
 
 
-        {/* Banner Section start here  */}
+        {/* Banner Section start here   */}
 		<section class="banner-section home-4">
 			<div class="banner-area">
 				<div class="container">
