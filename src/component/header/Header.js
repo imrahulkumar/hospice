@@ -20,7 +20,7 @@ hi rahul  dsfsdfds
 				<div class="mobile-menu-area">
 					<div class="mobile-menu-area-inner">
 						<ul class="lab-ul">
-                            <li class="active"><a href="index-4.html#">Home</a>
+                            <li class="active"><a href="index-4.html#">Home Ashish</a>
                                 <ul class="lab-ul">
                                     <li><a href="index.html">Home Style One</a></li>
                                     <li><a href="index-2.html">Home Style Two</a></li>
