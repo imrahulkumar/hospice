@@ -1251,7 +1251,10 @@ div#example_filter {
     .header-section .primary-menu .logo a {
       display: block; }
       .header-section .primary-menu .logo a img {
-        display: block; }
+        height: auto;
+        width: 45%;
+        display: block;
+       }
     .header-section .primary-menu .main-area {
       align-items: center; }
       .header-section .primary-menu .main-area .main-menu ul {

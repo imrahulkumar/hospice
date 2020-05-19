@@ -1,14 +1,41 @@
-import React, { Component } from 'react';
-
+import React, { Component} from 'react'; 
+import CardBox from '../card/CardBox';
+import Axios from "axios";
 class Dashboard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {covidApiResponse: [],globalCases:[], img:[]};
+
+        this.setState.img = [
+            "assets/images/corona/01.png",
+            "assets/images/corona/02.png",
+            "assets/images/corona/03.png",
+            "assets/images/corona/01.png",
+            "assets/images/corona/02.png",
+            "assets/images/corona/03.png",
+        ];
+
+    }
+    componentDidMount() {
+        this.GetCovidCasesList();
+    }
+     GetCovidCasesList = async () => {
+        const res = await Axios.get(
+          `https://api.covid19api.com/summary`
+        );
+        this.setState({covidApiResponse:res});
+        this.setState({globalCases:res.data.Global});
+       };
+
     render() {
+        console.log("covidApiResponse ", this.state.covidApiResponse); 
+        const globalCaseCardList = Object.entries(this.state.globalCases).map((e,index) => ( { 
+            case:e[0],
+            count:e[1],
+            image: this.setState.img[index]
+            } ));
         return (
             <div>
-                
-
-
-
-
         {/* Banner Section start here   */}
 		<section class="banner-section home-4">
 			<div class="banner-area">
@@ -17,9 +44,9 @@ class Dashboard extends Component {
 						<div class="col-md-6 col-12">
 							<div class="content-part">
 								<div class="banner-content">
-                                    <h2><span>COVID-19</span></h2>
-                                    <h2>All <span>Live</span> Update</h2>
-                                    <p>Completely pontificate goal-oriented collaboration awesome and idea-sharing Energisticaly corona and empowersr turnkey testing procedures ratheri thanin Proactively create disseminate multimedia.</p>
+                                    <h2><span>HOSPICE</span></h2>
+                                    <p>Growing with You  <span>Everyday</span></p>
+                                    <p>Hospice care prioritizes comfort and quality of life by reducing pain and suffering.</p>
                                     <a href="index-4.html#" class="lab-btn style-2"><span>finad a doctor</span></a>
 								</div>
 							</div>
@@ -39,62 +66,13 @@ class Dashboard extends Component {
         <section class="corona-count-section home-4 bg-corona padding-tb pt-0">
             <div class="container">
                 <div class="corona-wrap">
-                    <div class="corona-count-top wow fadeInUp" data-wow-delay="0.3s">
-                        <div class="row justify-content-center align-items-center">
-                            <div class="col-xl-3 col-md-6 col-12">
-                                <div class="corona-item">
-                                    <div class="corona-inner">
-                                        <div class="corona-thumb">
-                                            <img src="assets/images/corona/01.png" alt="corona"></img>
-                                        </div>
-                                        <div class="corona-content">
-                                            <h3 class="count-number">762774</h3>
-                                            <p>Coronavirus Cases</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6 col-12">
-                                <div class="corona-item">
-                                    <div class="corona-inner">
-                                        <div class="corona-thumb">
-                                            <img src="assets/images/corona/02.png" alt="corona"></img>
-                                        </div>
-                                        <div class="corona-content">
-                                            <h3 class="count-number">325050</h3>
-                                            <p>Recovered Cases</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6 col-12">
-                                <div class="corona-item">
-                                    <div class="corona-inner">
-                                        <div class="corona-thumb">
-                                            <img src="assets/images/corona/03.png" alt="corona"></img>
-                                        </div>
-                                        <div class="corona-content">
-                                            <h3 class="count-number">34558</h3>
-                                            <p>Total Deaths</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6 col-12">
-                                <div class="corona-item">
-                                    <div class="corona-inner">
-                                        <div class="corona-thumb">
-                                            <img src="assets/images/corona/04.png" alt="corona"></img>
-                                        </div>
-                                        <div class="corona-content">
-                                            <h3><span class="count-number">200</span>+</h3>
-                                            <p>Total Country</p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                <div class="corona-count-top wow fadeInUp" data-wow-delay="0.3s"> 
+
+                  {/* Common Card for case list Section start here  */}
+                    <CardBox covidCaseList={globalCaseCardList}   />
+                  {/* Common Card for case list Section end here  */}
+
+               </div>  
                     <div class="corona-count-bottom wow fadeInUp" data-wow-delay="0.4s">
                         <div class="row justify-content-center">
                             <div class="col-xl-8 col-lg-6 col-12">

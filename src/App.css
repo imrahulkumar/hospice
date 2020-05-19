@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+.header-section .primary-menu .logo a img {
+  display: block;
+  height: auto !important;
+  width: 45% !important;
+}
