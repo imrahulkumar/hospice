@@ -14,21 +14,21 @@ class Footer extends Component {
             <div>
                 {/* Footer Section Start Here  */}
                 <footer style={footerStyle}>
-                    <div class="footer-top padding-tb">
-                        <div class="container">
-                            <div class="row">
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="footer-item first-set">
-                                        <div class="footer-inner">
-                                            <div class="footer-content">
-                                                <div class="title">
+                    <div className="footer-top padding-tb">
+                        <div className="container">
+                            <div className="row">
+                                <div className="col-lg-3 col-md-6 col-12">
+                                    <div className="footer-item first-set">
+                                        <div className="footer-inner">
+                                            <div className="footer-content">
+                                                <div className="title">
                                                     <h6>About Covid-19</h6>
                                                 </div>
-                                                <div class="content">
+                                                <div className="content">
                                                     <p>We believe in Simple Creative and Flexible Design Standards.</p>
                                                     <h6>Headquarters:</h6>
                                                     <p>795 Folsom Ave, Suite 600 San Francisco, CA 94107</p>
-                                                    <ul class="lab-ul">
+                                                    <ul className="lab-ul">
                                                         <li>
                                                             <p><span>Phone:</span>(91) 8547 632521</p>
                                                         </li>
@@ -41,60 +41,60 @@ class Footer extends Component {
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="footer-item">
-                                        <div class="footer-inner">
-                                            <div class="footer-content">
-                                                <div class="title">
+                                <div className="col-lg-3 col-md-6 col-12">
+                                    <div className="footer-item">
+                                        <div className="footer-inner">
+                                            <div className="footer-content">
+                                                <div className="title">
                                                     <h6>Navigate</h6>
                                                 </div>
-                                                <div class="content">
-                                                    <ul class="lab-ul">
-                                                        <li><a href="index-4.html#"><i class="icofont-caret-right"></i>Advertisers</a></li>
-                                                        <li><a href="index-4.html#"><i class="icofont-caret-right"></i>Developers</a></li>
-                                                        <li><a href="index-4.html#"><i class="icofont-caret-right"></i>Resources</a></li>
-                                                        <li><a href="index-4.html#"><i class="icofont-caret-right"></i>Company</a></li>
-                                                        <li><a href="index-4.html#"><i class="icofont-caret-right"></i>Connect</a></li>
+                                                <div className="content">
+                                                    <ul className="lab-ul">
+                                                        <li><a href="index-4.html#"><i className="icofont-caret-right"></i>Advertisers</a></li>
+                                                        <li><a href="index-4.html#"><i className="icofont-caret-right"></i>Developers</a></li>
+                                                        <li><a href="index-4.html#"><i className="icofont-caret-right"></i>Resources</a></li>
+                                                        <li><a href="index-4.html#"><i className="icofont-caret-right"></i>Company</a></li>
+                                                        <li><a href="index-4.html#"><i className="icofont-caret-right"></i>Connect</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="footer-item">
-                                        <div class="footer-inner">
-                                            <div class="footer-content">
-                                                <div class="title">
+                                <div className="col-lg-3 col-md-6 col-12">
+                                    <div className="footer-item">
+                                        <div className="footer-inner">
+                                            <div className="footer-content">
+                                                <div className="title">
                                                     <h6>Social Contact</h6>
                                                 </div>
-                                                <div class="content">
-                                                    <ul class="lab-ul">
-                                                        <li><a href="index-4.html#"><i class="icofont-facebook"></i>Facebook</a></li>
-                                                        <li><a href="index-4.html#"><i class="icofont-twitter"></i>Twitter</a></li>
-                                                        <li><a href="index-4.html#"><i class="icofont-instagram"></i>Instagram</a></li>
-                                                        <li><a href="index-4.html#"><i class="icofont-youtube"></i>YouTube</a></li>
-                                                        <li><a href="index-4.html#"><i class="icofont-xing"></i>Xing</a></li>
+                                                <div className="content">
+                                                    <ul className="lab-ul">
+                                                        <li><a href="index-4.html#"><i className="icofont-facebook"></i>Facebook</a></li>
+                                                        <li><a href="index-4.html#"><i className="icofont-twitter"></i>Twitter</a></li>
+                                                        <li><a href="index-4.html#"><i className="icofont-instagram"></i>Instagram</a></li>
+                                                        <li><a href="index-4.html#"><i className="icofont-youtube"></i>YouTube</a></li>
+                                                        <li><a href="index-4.html#"><i className="icofont-xing"></i>Xing</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-3 col-md-6 col-12">
-                                    <div class="footer-item">
-                                        <div class="footer-inner">
-                                            <div class="footer-content">
-                                                <div class="title">
+                                <div className="col-lg-3 col-md-6 col-12">
+                                    <div className="footer-item">
+                                        <div className="footer-inner">
+                                            <div className="footer-content">
+                                                <div className="title">
                                                     <h6>Privacy And Tos</h6>
                                                 </div>
-                                                <div class="content">
-                                                    <ul class="lab-ul">
-                                                        <li><a href="index-4.html#"><i class="icofont-caret-right"></i>Advertiser Agreement</a></li>
-                                                        <li><a href="index-4.html#"><i class="icofont-caret-right"></i>Acceptable Use Policy</a></li>
-                                                        <li><a href="index-4.html#"><i class="icofont-caret-right"></i>Privacy Policy</a></li>
-                                                        <li><a href="index-4.html#"><i class="icofont-caret-right"></i>Technology Privacy</a></li>
-                                                        <li><a href="index-4.html#"><i class="icofont-caret-right"></i>Developer Agreement</a></li>
+                                                <div className="content">
+                                                    <ul className="lab-ul">
+                                                        <li><a href="index-4.html#"><i className="icofont-caret-right"></i>Advertiser Agreement</a></li>
+                                                        <li><a href="index-4.html#"><i className="icofont-caret-right"></i>Acceptable Use Policy</a></li>
+                                                        <li><a href="index-4.html#"><i className="icofont-caret-right"></i>Privacy Policy</a></li>
+                                                        <li><a href="index-4.html#"><i className="icofont-caret-right"></i>Technology Privacy</a></li>
+                                                        <li><a href="index-4.html#"><i className="icofont-caret-right"></i>Developer Agreement</a></li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -104,9 +104,9 @@ class Footer extends Component {
                             </div>
                         </div>
                     </div>
-                    <div class="footer-bottom" style={footerStyleBottom}>
-                        <div class="container">
-                            <div class="section-wrapper">
+                    <div className="footer-bottom" style={footerStyleBottom}>
+                        <div className="container">
+                            <div className="section-wrapper">
                                 <p>&copy; 2020 All Rights Reserved. Designed by <a href="https://themeforest.net/user/codexcoder">CodexCoder</a></p>
                             </div>
                         </div>
@@ -115,7 +115,7 @@ class Footer extends Component {
                 {/* Footer Section Ending Here */}
 
                 {/* scrollToTop start here  */}
-                <a href="index-4.html#" class="scrollToTop"><i class="icofont-swoosh-up"></i><span class="pluse_1"></span><span class="pluse_2"></span></a>
+                <a href="index-4.html#" className="scrollToTop"><i className="icofont-swoosh-up"></i><span className="pluse_1"></span><span className="pluse_2"></span></a>
                 {/* scrollToTop ending here  */}
             </div>
         );
