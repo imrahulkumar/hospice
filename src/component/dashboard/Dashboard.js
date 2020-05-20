@@ -1,6 +1,37 @@
 import React, { Component } from 'react';
-class Dashboard extends Component {
+import CardBox from '../card/CardBox';
+import Axios from "axios";
+export default class Dashboard extends Component {
+    constructor(props) {
+        super(props);
+        this.state = { covidApiResponse: [], globalCases: [], img: [] };
+
+        this.setState.img = [
+            "assets/images/corona/01.png",
+            "assets/images/corona/02.png",
+            "assets/images/corona/03.png",
+            "assets/images/corona/01.png",
+            "assets/images/corona/02.png",
+            "assets/images/corona/03.png",
+        ];
+
+    }
+    componentDidMount() {
+        this.GetCovidCasesList();
+    }
+    GetCovidCasesList = async () => {
+        const res = await Axios.get(`https://api.covid19api.com/summary`);
+        this.setState({ covidApiResponse: res });
+        this.setState({ globalCases: res.data.Global });
+    };
+
     render() {
+        console.log("covidApiResponse ", this.state.covidApiResponse);
+        const globalCaseCardList = Object.entries(this.state.globalCases).map((e, index) => ({
+            case: e[0],
+            count: e[1],
+            image: this.setState.img[index]
+        }));
         return (
             <div>
                 {/* Banner Section start here   */}
@@ -11,9 +42,9 @@ class Dashboard extends Component {
                                 <div class="col-md-6 col-12">
                                     <div class="content-part">
                                         <div class="banner-content">
-                                            <h2><span>COVID-19</span></h2>
-                                            <h2>All <span>Live</span> Update</h2>
-                                            <p>Completely pontificate goal-oriented collaboration awesome and idea-sharing Energisticaly corona and empowersr turnkey testing procedures ratheri thanin Proactively create disseminate multimedia.</p>
+                                            <h2><span>HOSPICE</span></h2>
+                                            <p>Growing with You  <span>Everyday</span></p>
+                                            <p>Hospice care prioritizes comfort and quality of life by reducing pain and suffering.</p>
                                             <a href="index-4.html#" class="lab-btn style-2"><span>finad a doctor</span></a>
                                         </div>
                                     </div>
@@ -34,60 +65,11 @@ class Dashboard extends Component {
                     <div class="container">
                         <div class="corona-wrap">
                             <div class="corona-count-top wow fadeInUp" data-wow-delay="0.3s">
-                                <div class="row justify-content-center align-items-center">
-                                    <div class="col-xl-3 col-md-6 col-12">
-                                        <div class="corona-item">
-                                            <div class="corona-inner">
-                                                <div class="corona-thumb">
-                                                    <img src="assets/images/corona/01.png" alt="corona"></img>
-                                                </div>
-                                                <div class="corona-content">
-                                                    <h3 class="count-number">762774</h3>
-                                                    <p>Coronavirus Cases</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-6 col-12">
-                                        <div class="corona-item">
-                                            <div class="corona-inner">
-                                                <div class="corona-thumb">
-                                                    <img src="assets/images/corona/02.png" alt="corona"></img>
-                                                </div>
-                                                <div class="corona-content">
-                                                    <h3 class="count-number">325050</h3>
-                                                    <p>Recovered Cases</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-6 col-12">
-                                        <div class="corona-item">
-                                            <div class="corona-inner">
-                                                <div class="corona-thumb">
-                                                    <img src="assets/images/corona/03.png" alt="corona"></img>
-                                                </div>
-                                                <div class="corona-content">
-                                                    <h3 class="count-number">34558</h3>
-                                                    <p>Total Deaths</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-xl-3 col-md-6 col-12">
-                                        <div class="corona-item">
-                                            <div class="corona-inner">
-                                                <div class="corona-thumb">
-                                                    <img src="assets/images/corona/04.png" alt="corona"></img>
-                                                </div>
-                                                <div class="corona-content">
-                                                    <h3><span class="count-number">200</span>+</h3>
-                                                    <p>Total Country</p>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
+                                {/* Common Card for case list Section start here  */}
+                                <CardBox covidCaseList={globalCaseCardList} />
+                                {/* Common Card for case list Section end here  */}
+
                             </div>
                             <div class="corona-count-bottom wow fadeInUp" data-wow-delay="0.4s">
                                 <div class="row justify-content-center">
@@ -104,84 +86,142 @@ class Dashboard extends Component {
                                                     </ul>
                                                 </div>
                                             </div>
-                                            <div class="cl-thumb bg-f9">
-                                                <img src="assets/images/corona/map.jpg" alt="cl-map"></img>
+                                            <div class="col-xl-3 col-md-6 col-12">
+                                                <div class="corona-item">
+                                                    <div class="corona-inner">
+                                                        <div class="corona-thumb">
+                                                            <img src="assets/images/corona/02.png" alt="corona"></img>
+                                                        </div>
+                                                        <div class="corona-content">
+                                                            <h3 class="count-number">325050</h3>
+                                                            <p>Recovered Cases</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-md-6 col-12">
+                                                <div class="corona-item">
+                                                    <div class="corona-inner">
+                                                        <div class="corona-thumb">
+                                                            <img src="assets/images/corona/03.png" alt="corona"></img>
+                                                        </div>
+                                                        <div class="corona-content">
+                                                            <h3 class="count-number">34558</h3>
+                                                            <p>Total Deaths</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-3 col-md-6 col-12">
+                                                <div class="corona-item">
+                                                    <div class="corona-inner">
+                                                        <div class="corona-thumb">
+                                                            <img src="assets/images/corona/04.png" alt="corona"></img>
+                                                        </div>
+                                                        <div class="corona-content">
+                                                            <h3><span class="count-number">200</span>+</h3>
+                                                            <p>Total Country</p>
+                                                        </div>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xl-4 col-lg-6 col-12">
-                                        <div class="corona-right">
-                                            <div class="cr-title d-flex align-items-center justify-content-between">
-                                                <div class="clt-left">
-                                                    <h6>Top 10 Countries</h6>
-                                                </div>
-                                                <div class="clt-right">
-                                                    <a href="index-4.html#">See Full List <i class="icofont-double-right"></i></a>
+                                    <div class="corona-count-bottom wow fadeInUp" data-wow-delay="0.4s">
+                                        <div class="row justify-content-center">
+                                            <div class="col-xl-8 col-lg-6 col-12">
+                                                <div class="corona-left">
+                                                    <div class="cl-title d-flex flex-wrap align-items-center justify-content-between">
+                                                        <div class="clt-left">
+                                                            <p>covid-19 Affected Areas</p>
+                                                        </div>
+                                                        <div class="clt-right">
+                                                            <ul class="lab-ul d-flex flex-wrap align-items-center justify-content-between">
+                                                                <li>Most Affected</li>
+                                                                <li>Lass Affected</li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cl-thumb bg-f9">
+                                                        <img src="assets/images/corona/map.jpg" alt="cl-map"></img>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="cr-body">
-                                                <div class="crb-title">
-                                                    <ul class="lab-ul">
-                                                        <li>
-                                                            <div class="cr-country">country</div>
-                                                            <div class="cr-case">case</div>
-                                                            <div class="cr-deaths">deaths</div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                                <div class="crb-list">
-                                                    <ul class="lab-ul">
-                                                        <li>
-                                                            <div class="cr-country"><img src="assets/images/corona/country/03.png" alt="country"></img>USA</div>
-                                                            <div class="cr-case">85,604</div>
-                                                            <div class="cr-deaths">1,301</div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="cr-country"><img src="assets/images/corona/country/01.png" alt="country"></img>China</div>
-                                                            <div class="cr-case">81,340</div>
-                                                            <div class="cr-deaths">3,292</div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="cr-country"><img src="assets/images/corona/country/02.png" alt="country"></img>Italy</div>
-                                                            <div class="cr-case">80,589</div>
-                                                            <div class="cr-deaths">8,215</div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="cr-country"><img src="assets/images/corona/country/04.png" alt="country"></img>Spain</div>
-                                                            <div class="cr-case">57,786</div>
-                                                            <div class="cr-deaths">4,365</div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="cr-country"><img src="assets/images/corona/country/05.png" alt="country"></img>Germany</div>
-                                                            <div class="cr-case">43,938</div>
-                                                            <div class="cr-deaths">267</div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="cr-country"><img src="http://demos.codexcoder.com/labartisan/html/covid-19/assets/images/corona/country/06.png" alt="country"></img>Iran</div>
-                                                            <div class="cr-case">29,406</div>
-                                                            <div class="cr-deaths">2,234</div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="cr-country"><img src="assets/images/corona/country/07.png" alt="country"></img>France</div>
-                                                            <div class="cr-case">29,155</div>
-                                                            <div class="cr-deaths">1,696</div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="cr-country"><img src="assets/images/corona/country/08.png" alt="country"></img>Switzerland</div>
-                                                            <div class="cr-case">11,811</div>
-                                                            <div class="cr-deaths">192</div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="cr-country"><img src="assets/images/corona/country/09.png" alt="country"></img>UK</div>
-                                                            <div class="cr-case">11,658</div>
-                                                            <div class="cr-deaths">578</div>
-                                                        </li>
-                                                        <li>
-                                                            <div class="cr-country"><img src="assets/images/corona/country/10.png" alt="country"></img>S. Korea</div>
-                                                            <div class="cr-case">9,332</div>
-                                                            <div class="cr-deaths">139</div>
-                                                        </li>
-                                                    </ul>
+                                            <div class="col-xl-4 col-lg-6 col-12">
+                                                <div class="corona-right">
+                                                    <div class="cr-title d-flex align-items-center justify-content-between">
+                                                        <div class="clt-left">
+                                                            <h6>Top 10 Countries</h6>
+                                                        </div>
+                                                        <div class="clt-right">
+                                                            <a href="index-4.html#">See Full List <i class="icofont-double-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cr-body">
+                                                        <div class="crb-title">
+                                                            <ul class="lab-ul">
+                                                                <li>
+                                                                    <div class="cr-country">country</div>
+                                                                    <div class="cr-case">case</div>
+                                                                    <div class="cr-deaths">deaths</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                        <div class="crb-list">
+                                                            <ul class="lab-ul">
+                                                                <li>
+                                                                    <div class="cr-country"><img src="assets/images/corona/country/03.png" alt="country"></img>USA</div>
+                                                                    <div class="cr-case">85,604</div>
+                                                                    <div class="cr-deaths">1,301</div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="cr-country"><img src="assets/images/corona/country/01.png" alt="country"></img>China</div>
+                                                                    <div class="cr-case">81,340</div>
+                                                                    <div class="cr-deaths">3,292</div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="cr-country"><img src="assets/images/corona/country/02.png" alt="country"></img>Italy</div>
+                                                                    <div class="cr-case">80,589</div>
+                                                                    <div class="cr-deaths">8,215</div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="cr-country"><img src="assets/images/corona/country/04.png" alt="country"></img>Spain</div>
+                                                                    <div class="cr-case">57,786</div>
+                                                                    <div class="cr-deaths">4,365</div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="cr-country"><img src="assets/images/corona/country/05.png" alt="country"></img>Germany</div>
+                                                                    <div class="cr-case">43,938</div>
+                                                                    <div class="cr-deaths">267</div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="cr-country"><img src="http://demos.codexcoder.com/labartisan/html/covid-19/assets/images/corona/country/06.png" alt="country"></img>Iran</div>
+                                                                    <div class="cr-case">29,406</div>
+                                                                    <div class="cr-deaths">2,234</div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="cr-country"><img src="assets/images/corona/country/07.png" alt="country"></img>France</div>
+                                                                    <div class="cr-case">29,155</div>
+                                                                    <div class="cr-deaths">1,696</div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="cr-country"><img src="assets/images/corona/country/08.png" alt="country"></img>Switzerland</div>
+                                                                    <div class="cr-case">11,811</div>
+                                                                    <div class="cr-deaths">192</div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="cr-country"><img src="assets/images/corona/country/09.png" alt="country"></img>UK</div>
+                                                                    <div class="cr-case">11,658</div>
+                                                                    <div class="cr-deaths">578</div>
+                                                                </li>
+                                                                <li>
+                                                                    <div class="cr-country"><img src="assets/images/corona/country/10.png" alt="country"></img>S. Korea</div>
+                                                                    <div class="cr-case">9,332</div>
+                                                                    <div class="cr-deaths">139</div>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </div>
                                                 </div>
                                             </div>
                                         </div>
@@ -1419,5 +1459,3 @@ class Dashboard extends Component {
         );
     }
 }
-
-export default Dashboard;

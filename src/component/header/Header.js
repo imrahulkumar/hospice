@@ -25,7 +25,7 @@ export default class Header extends Component {
                                             <li><NavLink to="/near-by-me" >Near By Support</NavLink></li>
                                             {/* <li><a href="index-2.html">Home Style Two</a></li>
                                     <li><a href="index-3.html">Home Style Three</a></li>
-                                    <li class="active"><a href="index-4.html">Home Style Four <sup>New</sup></a></li>
+                                    <li className="active"><a href="index-4.html">Home Style Four <sup>New</sup></a></li>
                                     <li><a href="index-5.html">Home Style Five <sup>New</sup></a></li>
                                     <li><a href="index-6.html">Home Style Six <sup>New</sup></a></li>
                                     <li><a href="index-7.html">Home Style Seven <sup>New</sup></a></li>
@@ -35,9 +35,9 @@ export default class Header extends Component {
                                         </ul>
                                     </li>
                                     <li><a href="index-4.html#">Pages</a>
-                                        <ul class="lab-ul">
+                                        <ul className="lab-ul">
                                             <li><a href="index-4.html#0">About Page</a>
-                                                <ul class="lab-ul">
+                                                <ul className="lab-ul">
                                                     <li><a href="about.html">About Style 1</a></li>
                                                     <li><a href="about-2.html">About Style 2</a></li>
                                                 </ul>
@@ -50,7 +50,7 @@ export default class Header extends Component {
                                     </li>
                                     <li><a href="service.html">Prevention</a></li>
                                     <li><a href="index-4.html#">Blog</a>
-                                        <ul class="lab-ul">
+                                        <ul className="lab-ul">
                                             <li><a href="blog.html">Blog Style 1</a></li>
                                             <li><a href="blog-2.html">Blog Style 2</a></li>
                                             <li><a href="blog-3.html">Blog Style 3</a></li>
@@ -58,7 +58,7 @@ export default class Header extends Component {
                                         </ul>
                                     </li>
                                     <li><a href="index-4.html#0">Shop</a>
-                                        <ul class="lab-ul">
+                                        <ul className="lab-ul">
                                             <li><a href="shop-page.html">Products Page</a></li>
                                             <li><a href="shop-single.html">Product Single</a></li>
                                             <li><a href="cart-page.html">Cart Page</a></li>
