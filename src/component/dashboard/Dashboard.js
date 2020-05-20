@@ -25,13 +25,12 @@ export default class Dashboard extends Component {
     }
     GetCovidCasesList = async () => {
         const res = await Axios.get(`https://api.covid19api.com/summary`);
-        this.setState({...res, covidApiResponse: res });
-        this.setState({...res, globalCases: res.data.Global });
+        this.setState({ ...res, covidApiResponse: res });
+        this.setState({ ...res, globalCases: res.data.Global });
     };
 
     render() {
-        console.log("covidApiResponse ", this.state.covidApiResponse);
-        const globalCaseCardList = Object.entries(this.state.globalCases).map((e, index) => ({
+            const globalCaseCardList = Object.entries(this.state.globalCases).map((e, index) => ({
             case: e[0],
             count: e[1],
             image: this.state.img[index]

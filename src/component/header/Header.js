@@ -8,7 +8,7 @@ export default class Header extends Component {
                 <div className="mobile-menu">
                     <nav className="mobile-header">
                         <div className="header-logo">
-                            <a href="index.html"><img src="assets/images/logo/04.png" alt="logo"></img></a>
+                            <NavLink to="/"><img src="assets/images/logo/04.png" alt="logo"></img></NavLink>
                         </div>
                         <div className="header-bar">
                             <span></span>
@@ -81,7 +81,7 @@ export default class Header extends Component {
                         <div className="container">
                             <div className="primary-menu">
                                 <div className="logo">
-                                    <a href="index.html"><img src="assets/images/logo/04.png" alt="logo"></img></a>
+                                    <NavLink to="/"><img src="assets/images/logo/04.png" alt="logo"></img></NavLink>
                                 </div>
                                 <div className="main-area">
                                     <div className="main-menu">
