@@ -3,7 +3,7 @@ import CardBox from '../card/CardBox';
 import Axios from "axios";
 export default class Dashboard extends Component {
     constructor(props) {
-        super(props);
+        super(props); 
         this.state = {
             covidApiResponse: [],
             globalCases: [],
