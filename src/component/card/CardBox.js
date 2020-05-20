@@ -4,7 +4,7 @@ import React from 'react'
 const CardBox = (props) => {
     const covidCaseResult = props.covidCaseList.map((c, index) => {
         return (
-            <div class="col-xl-2 col-md-6 col-12" key={index}>
+            <div className="col-xl-2 col-md-6 col-12" key={index}>
                 <div className="corona-item">
                     <div className="corona-inner" key={Math.floor(Math.random() * 10)}>
                         <div className="corona-thumb">
@@ -21,7 +21,7 @@ const CardBox = (props) => {
     });
 
     return (
-        <div class="row justify-content-center align-items-center">
+        <div className="row justify-content-center align-items-center">
             {covidCaseResult}
         </div>
     )
