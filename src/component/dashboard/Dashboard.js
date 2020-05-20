@@ -4,16 +4,20 @@ import Axios from "axios";
 export default class Dashboard extends Component {
     constructor(props) {
         super(props);
-        this.state = { covidApiResponse: [], globalCases: [], img: [] };
+        this.state = {
+            covidApiResponse: [],
+            globalCases: [],
+            img: [
+                "assets/images/corona/01.png",
+                "assets/images/corona/02.png",
+                "assets/images/corona/03.png",
+                "assets/images/corona/01.png",
+                "assets/images/corona/02.png",
+                "assets/images/corona/03.png",
+            ]
+        };
 
-        this.setState.img = [
-            "assets/images/corona/01.png",
-            "assets/images/corona/02.png",
-            "assets/images/corona/03.png",
-            "assets/images/corona/01.png",
-            "assets/images/corona/02.png",
-            "assets/images/corona/03.png",
-        ];
+
 
     }
     componentDidMount() {
@@ -21,8 +25,8 @@ export default class Dashboard extends Component {
     }
     GetCovidCasesList = async () => {
         const res = await Axios.get(`https://api.covid19api.com/summary`);
-        this.setState({ covidApiResponse: res });
-        this.setState({ globalCases: res.data.Global });
+        this.setState({...res, covidApiResponse: res });
+        this.setState({...res, globalCases: res.data.Global });
     };
 
     render() {
@@ -30,7 +34,7 @@ export default class Dashboard extends Component {
         const globalCaseCardList = Object.entries(this.state.globalCases).map((e, index) => ({
             case: e[0],
             count: e[1],
-            image: this.setState.img[index]
+            image: this.state.img[index]
         }));
         return (
             <div>
