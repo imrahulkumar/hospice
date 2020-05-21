@@ -22,7 +22,15 @@ export default class Header extends Component {
                                 <ul className="lab-ul">
                                     <li className="active"><a href="index-4.html#">Home</a>
                                         <ul className="lab-ul">
-                                            <li><NavLink to="/near-by-me" >Near By Support</NavLink></li>
+                                        <li><a href="index-4.html#0">Near By Help</a>
+                                                <ul className="lab-ul">
+                                                    <li><NavLink to="/near-by-me">Hopspital</NavLink></li>
+                                                    <li><NavLink to="/near/blood-bank">Blood Bank</NavLink></li>
+                                                    <li><NavLink to="/near/testing-laboratory">Testing Laboratory</NavLink></li>
+                                                    <li><NavLink to="/near/chemist-outlet">Chemist Outlet</NavLink></li>
+                                                    <li><NavLink to="/near/police-station">Police Station</NavLink></li>
+                                                    </ul>
+                                                    </li>
                                             {/* <li><a href="index-2.html">Home Style Two</a></li>
                                     <li><a href="index-3.html">Home Style Three</a></li>
                                     <li className="active"><a href="index-4.html">Home Style Four <sup>New</sup></a></li>
@@ -88,7 +96,15 @@ export default class Header extends Component {
                                         <ul className="lab-ul">
                                             <li className="active"><a href="index-4.html#">Home</a>
                                                 <ul className="lab-ul">
-                                                    <li><NavLink to="/near-by-me">Near By Support</NavLink></li>
+                                                <li><a href="index-4.html#0">Near By Help</a>
+                                                <ul className="lab-ul">
+                                                    <li><NavLink to="/near-by-me">Hopspital</NavLink></li>
+                                                    <li><NavLink to="/near/blood-bank">Blood Bank</NavLink></li>
+                                                    <li><NavLink to="/near/testing-laboratory">Testing Laboratory</NavLink></li>
+                                                    <li><NavLink to="/near/chemist-outlet">Chemist Outlet</NavLink></li>
+                                                    <li><NavLink to="/near/police-station">Police Station</NavLink></li>
+                                                    </ul>
+                                                    </li>
                                                     {/* <li><a href="index-2.html">Home Style Two</a></li>
                                             <li><a href="index-3.html">Home Style Three</a></li>
                                             <li className="active"><a href="index-4.html">Home Style Four <sup>New</sup></a></li>

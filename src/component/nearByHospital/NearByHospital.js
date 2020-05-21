@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Axios from "axios";
 
-class NearByMe extends Component {
+class NearByHospital extends Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -34,13 +34,11 @@ class NearByMe extends Component {
         }
 
 
-     const linkToHospital = (anchor) =>{
-     return<div>
-        
-        <p>Open In Map:</p>  <div className="linkStyle" dangerouslySetInnerHTML= {{ __html: anchor}}></div>
-     </div> 
-     
-     }
+        const linkToHospital = (anchor) => {
+            return <div>
+                <p>Open In Map:</p>  <div className="linkStyle" dangerouslySetInnerHTML={{ __html: anchor }}></div>
+            </div>
+        }
 
         const listOfHospital = this.state.hospital.map((d, index) => {
             return (
@@ -53,9 +51,9 @@ class NearByMe extends Component {
                             <div className="service-content">
                                 <h4>{d.name}</h4>
                                 <p>{d.vicinity}</p>
-                               
-                                {(d && d.photos && d.photos.length > 0 && d.photos[0].html_attributions.length > 0 ? linkToHospital(d.photos[0].html_attributions[0]): '')}
-                               
+
+                                {(d && d.photos && d.photos.length > 0 && d.photos[0].html_attributions.length > 0 ? linkToHospital(d.photos[0].html_attributions[0]) : '')}
+
                             </div>
                         </div>
                     </div>
@@ -73,7 +71,7 @@ class NearByMe extends Component {
                         </div>
                         <div className="section-wrapper">
                             <div className="row no-gutters justify-content-center">
-                                {listOfHospital}                          
+                                {listOfHospital}
                             </div>
                         </div>
                     </div>
@@ -83,4 +81,4 @@ class NearByMe extends Component {
     }
 }
 
-export default NearByMe;
+export default NearByHospital;
