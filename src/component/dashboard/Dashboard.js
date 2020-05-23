@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CardBox from '../card/CardBox';
 import Axios from "axios";
+import StateCovidTableList from '../table/StateCovidTableList'
 export default class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -14,7 +15,9 @@ export default class Dashboard extends Component {
                 "assets/images/corona/01.png",
                 "assets/images/corona/02.png",
                 "assets/images/corona/03.png",
-            ]
+            ],
+            covidIndiaStateList:[],
+            covidIndiaTotalCaseList:{}
         };
 
 
@@ -22,11 +25,19 @@ export default class Dashboard extends Component {
     }
     componentDidMount() {
         this.GetCovidCasesList();
+        this.GetIndiaStateCovidList();
     }
     GetCovidCasesList = async () => {
         const res = await Axios.get(`https://api.covid19api.com/summary`);
         this.setState({ ...res, covidApiResponse: res });
         this.setState({ ...res, globalCases: res.data.Global });
+    };
+    GetIndiaStateCovidList = async () => { 
+        const statesResult = await Axios.get(`https://api.rootnet.in/covid19-in/stats/latest`);
+        console.log("statesResult", statesResult.data.data); 
+        this.setState({ ...statesResult, covidIndiaStateList: statesResult.data.data.regional }); 
+        this.setState({ ...statesResult, covidIndiaTotalCaseList: statesResult.data.data.summary}); 
+        
     };
 
     render() {
@@ -76,59 +87,8 @@ export default class Dashboard extends Component {
                             </div>
                             <div className="corona-count-bottom wow fadeInUp" data-wow-delay="0.4s">
                                 <div className="row justify-content-center">
-                                    <div className="col-xl-8 col-lg-6 col-12">
-                                        <div className="corona-left">
-                                            <div className="cl-title d-flex flex-wrap align-items-center justify-content-between">
-                                                <div className="clt-left">
-                                                    <p>covid-19 Affected Areas</p>
-                                                </div>
-                                                <div className="clt-right">
-                                                    <ul className="lab-ul d-flex flex-wrap align-items-center justify-content-between">
-                                                        <li>Most Affected</li>
-                                                        <li>Lass Affected</li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                            <div className="col-xl-3 col-md-6 col-12">
-                                                <div className="corona-item">
-                                                    <div className="corona-inner">
-                                                        <div className="corona-thumb">
-                                                            <img src="assets/images/corona/02.png" alt="corona"></img>
-                                                        </div>
-                                                        <div className="corona-content">
-                                                            <h3 className="count-number">325050</h3>
-                                                            <p>Recovered Cases</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-xl-3 col-md-6 col-12">
-                                                <div className="corona-item">
-                                                    <div className="corona-inner">
-                                                        <div className="corona-thumb">
-                                                            <img src="assets/images/corona/03.png" alt="corona"></img>
-                                                        </div>
-                                                        <div className="corona-content">
-                                                            <h3 className="count-number">34558</h3>
-                                                            <p>Total Deaths</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-xl-3 col-md-6 col-12">
-                                                <div className="corona-item">
-                                                    <div className="corona-inner">
-                                                        <div className="corona-thumb">
-                                                            <img src="assets/images/corona/04.png" alt="corona"></img>
-                                                        </div>
-                                                        <div className="corona-content">
-                                                            <h3><span className="count-number">200</span>+</h3>
-                                                            <p>Total Country</p>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                    <div className="col-xl-12 col-lg-12 col-12"> 
+                                        <StateCovidTableList covidStatelist={this.state.covidIndiaStateList} covidIndiaTotalCaseList={this.state.covidIndiaTotalCaseList} />
                                     </div>
                                     <div className="corona-count-bottom wow fadeInUp" data-wow-delay="0.4s">
                                         <div className="row justify-content-center">
