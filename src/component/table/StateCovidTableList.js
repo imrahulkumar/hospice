@@ -9,9 +9,9 @@ const StateCovidTableList = (props)=> {
             return (
                  <tr key={index}>
                     <td>{c.loc}</td> 
-                     <td class="new-cases">{c.totalConfirmed}</td>
+                     <td className="new-cases">{c.totalConfirmed}</td>
                      <td>{c.discharged}</td>
-                     <td class="new-deaths">{c.deaths}</td>
+                     <td className="new-deaths">{c.deaths}</td>
                      <td>{c.confirmedCasesIndian}</td>
                      <td>{c.confirmedCasesForeign}</td>
                 </tr>
@@ -19,7 +19,7 @@ const StateCovidTableList = (props)=> {
         });
     return (
         <div className="corona-left" style={wrapper}>
-        <table class="table table-striped table-bordered caseTablePadding">
+        <table className="table table-striped table-bordered caseTablePadding">
         <thead>
             <tr>
                 <th>State</th>

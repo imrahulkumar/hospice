@@ -118,16 +118,16 @@ export default class Header extends Component {
                                             </li>
                                             <li><a href="index-4.html#">Pages</a>
                                                 <ul className="lab-ul">
-                                                    <li><a href="index-4.html#0">About Page</a>
+                                                    {/* <li><a href="index-4.html#0">About Page</a>
                                                         <ul className="lab-ul">
                                                             <li><a href="about.html">About Style 1</a></li>
                                                             <li><a href="about-2.html">About Style 2</a></li>
                                                         </ul>
-                                                    </li>
-                                                    <li><a href="faq.html">Faq</a></li>
-                                                    <li><a href="outbreak.html">Outbreak</a></li>
+                                                    </li> */}
+                                                    <li><NavLink to="/faq">Faq</NavLink></li>
+                                                    {/* <li><a href="outbreak.html">Outbreak</a></li>
                                                     <li><a href="coming-soon.html">ComingSoon</a></li>
-                                                    <li><a href="404.html">404 Page</a></li>
+                                                    <li><a href="404.html">404 Page</a></li> */}
                                                 </ul>
                                             </li>
                                             <li><a href="service.html">Prevention</a></li>
