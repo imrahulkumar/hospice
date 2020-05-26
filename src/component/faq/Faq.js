@@ -9,7 +9,13 @@ export default class Faq extends Component {
     constructor(props){
         super(props)
     }
-    render() {
+    render() { 
+      const  objPath ={
+          'general':General,
+          'symptoms':Symptoms,
+          'medical':Medical,
+          'protection':Protection,
+      }
         return (
             <div>
                 <section className="faq-section bg-f9 padding-tb">
@@ -21,25 +27,20 @@ export default class Faq extends Component {
                         <div className="section-wrapper wow fadeInUp" data-wow-delay="0.4s">
                             <ul className="tab-lists lab-ul nav justify-content-center" id="myTab" role="tablist">
                                 <li className="nav-item tab-list">
-                                    <Link to={`${this.props.match.path}/general`}  aria-controls="general" aria-selected="true">General</Link>
+                                    <Link to={{pathname: `${this.props.match.path}/general`, query: 'general' }}  aria-controls="general" aria-selected="true">General</Link>
+                                    </li>
+                                <li className="nav-item tab-list">
+                                    <Link  to={{pathname: `${this.props.match.path}/symptoms`, query: 'symptoms' }}  aria-controls="symptoms" aria-selected="false">Symptoms</Link>
                                 </li>
                                 <li className="nav-item tab-list">
-                                    <Link  to={`${this.props.match.path}/symptoms`}   aria-controls="symptoms" aria-selected="false">Symptoms</Link>
+                                    <Link  to={{pathname: `${this.props.match.path}/medical`, query: 'medical' }}   aria-controls="medical" aria-selected="false">Medical</Link>
                                 </li>
                                 <li className="nav-item tab-list">
-                                    <Link  to={`${this.props.match.path}/medical`}   aria-controls="medical" aria-selected="false">Medical</Link>
-                                </li>
-                                <li className="nav-item tab-list">
-                                    <Link  to={`${this.props.match.path}/protection`} aria-controls="protection" aria-selected="false">Protection</Link>
+                                    <Link  to={{pathname: `${this.props.match.path}/protection`, query: 'protection' }}  aria-controls="protection" aria-selected="false">Protection</Link>
                                 </li>
                             </ul>
-                            <div className="tab-content faq-content"  >                    
-                              
-                                <Route  path={`${this.props.match.path}/general`} exact={true} component={General}/>
-                                <Route  path={`${this.props.match.path}/symptoms`} exact={true} component={Symptoms}/>
-                                <Route  path={`${this.props.match.path}/medical`} exact={true} component={Medical}/>
-                                <Route  path={`${this.props.match.path}/protection`} exact={true} component={Protection}/>
-                    
+                            <div className="tab-content faq-content"  >  
+                               <Route path={`${this.props.match.path}/:id`} component={objPath[this.props.location.query]}/> 
                             </div>
                         </div>
                     </div>

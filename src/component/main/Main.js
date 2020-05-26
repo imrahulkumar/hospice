@@ -19,7 +19,7 @@ class Main extends Component {
                         <Route path="/near-by-me" exact={true} component={NearByHospital} />
                         <Route path="/near/:id" exact={true} component={NearSupport}/>
                         <Route path="/faq"  component={Faq}/>
-                        <Route path="/faq/:id"  component={Faq}/>
+                        {/*<Route path="/faq/:id"  component={Faq}/>*/}
                         <Route path="/shop"  component={Shop}/>
                     </Switch>
                     <Footer />
