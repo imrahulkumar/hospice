@@ -7,6 +7,7 @@ import Footer from '../footer/Footer'
 import NearSupport from '../nearSupport/NearSupport';
 import Faq from '../faq/Faq'
 import Shop from '../shop/Shop';
+
 class Main extends Component {
     render() {
         return (

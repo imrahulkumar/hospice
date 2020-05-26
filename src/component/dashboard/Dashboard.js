@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import CardBox from '../card/CardBox';
 import Axios from "axios";
-import StateCovidTableList from '../table/StateCovidTableList'
+import StateCovidTableList from '../table/StateCovidTableList';  
+
 export default class Dashboard extends Component {
     constructor(props) {
         super(props);
@@ -46,8 +47,12 @@ export default class Dashboard extends Component {
             count: e[1],
             image: this.state.img[index]
         }));
+
+       
+
         return (
-            <div>
+            <div> 
+
                 {/* Banner Section start here   */}
                 <section className="banner-section home-4">
                     <div className="banner-area">
@@ -90,105 +95,6 @@ export default class Dashboard extends Component {
                                     <div className="col-xl-12 col-lg-12 col-12"> 
                                         <StateCovidTableList covidStatelist={this.state.covidIndiaStateList} covidIndiaTotalCaseList={this.state.covidIndiaTotalCaseList} />
                                     </div>
-                                    <div className="corona-count-bottom wow fadeInUp" data-wow-delay="0.4s">
-                                        <div className="row justify-content-center">
-                                            <div className="col-xl-8 col-lg-6 col-12">
-                                                <div className="corona-left">
-                                                    <div className="cl-title d-flex flex-wrap align-items-center justify-content-between">
-                                                        <div className="clt-left">
-                                                            <p>covid-19 Affected Areas</p>
-                                                        </div>
-                                                        <div className="clt-right">
-                                                            <ul className="lab-ul d-flex flex-wrap align-items-center justify-content-between">
-                                                                <li>Most Affected</li>
-                                                                <li>Lass Affected</li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                    <div className="cl-thumb bg-f9">
-                                                        <img src="assets/images/corona/map.jpg" alt="cl-map"></img>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div className="col-xl-4 col-lg-6 col-12">
-                                                <div className="corona-right">
-                                                    <div className="cr-title d-flex align-items-center justify-content-between">
-                                                        <div className="clt-left">
-                                                            <h6>Top 10 Countries</h6>
-                                                        </div>
-                                                        <div className="clt-right">
-                                                            <a href="index-4.html#">See Full List <i className="icofont-double-right"></i></a>
-                                                        </div>
-                                                    </div>
-                                                    <div className="cr-body">
-                                                        <div className="crb-title">
-                                                            <ul className="lab-ul">
-                                                                <li>
-                                                                    <div className="cr-country">country</div>
-                                                                    <div className="cr-case">case</div>
-                                                                    <div className="cr-deaths">deaths</div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                        <div className="crb-list">
-                                                            <ul className="lab-ul">
-                                                                <li>
-                                                                    <div className="cr-country"><img src="assets/images/corona/country/03.png" alt="country"></img>USA</div>
-                                                                    <div className="cr-case">85,604</div>
-                                                                    <div className="cr-deaths">1,301</div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="cr-country"><img src="assets/images/corona/country/01.png" alt="country"></img>China</div>
-                                                                    <div className="cr-case">81,340</div>
-                                                                    <div className="cr-deaths">3,292</div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="cr-country"><img src="assets/images/corona/country/02.png" alt="country"></img>Italy</div>
-                                                                    <div className="cr-case">80,589</div>
-                                                                    <div className="cr-deaths">8,215</div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="cr-country"><img src="assets/images/corona/country/04.png" alt="country"></img>Spain</div>
-                                                                    <div className="cr-case">57,786</div>
-                                                                    <div className="cr-deaths">4,365</div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="cr-country"><img src="assets/images/corona/country/05.png" alt="country"></img>Germany</div>
-                                                                    <div className="cr-case">43,938</div>
-                                                                    <div className="cr-deaths">267</div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="cr-country"><img src="http://demos.codexcoder.com/labartisan/html/covid-19/assets/images/corona/country/06.png" alt="country"></img>Iran</div>
-                                                                    <div className="cr-case">29,406</div>
-                                                                    <div className="cr-deaths">2,234</div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="cr-country"><img src="assets/images/corona/country/07.png" alt="country"></img>France</div>
-                                                                    <div className="cr-case">29,155</div>
-                                                                    <div className="cr-deaths">1,696</div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="cr-country"><img src="assets/images/corona/country/08.png" alt="country"></img>Switzerland</div>
-                                                                    <div className="cr-case">11,811</div>
-                                                                    <div className="cr-deaths">192</div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="cr-country"><img src="assets/images/corona/country/09.png" alt="country"></img>UK</div>
-                                                                    <div className="cr-case">11,658</div>
-                                                                    <div className="cr-deaths">578</div>
-                                                                </li>
-                                                                <li>
-                                                                    <div className="cr-country"><img src="assets/images/corona/country/10.png" alt="country"></img>S. Korea</div>
-                                                                    <div className="cr-case">9,332</div>
-                                                                    <div className="cr-deaths">139</div>
-                                                                </li>
-                                                            </ul>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -199,9 +105,8 @@ export default class Dashboard extends Component {
                 {/* Service Section Start Here  */}
                 <section className="service-section home-4 pt-0 bg-f9 padding-tb">
                     <div className="container">
-                        <div className="section-header wow fadeInUp" data-wow-delay="0.3s">
-                            <span>How Virus Spread</span>
-                            <h2>How Contagion Coronavirus</h2>
+                        <div className="section-header wow fadeInUp" data-wow-delay="0.3s"> 
+                            <h2>Our Service</h2>
                         </div>
                         <div className="section-wrapper">
                             <div className="row justify-content-center">
@@ -212,7 +117,7 @@ export default class Dashboard extends Component {
                                                 <img src="assets/images/service/home-4/01.jpg" alt="service"></img>
                                             </div>
                                             <div className="service-content">
-                                                <h4>Human Contact</h4>
+                                                <h4>Hospital</h4>
                                                 <p>Our comprehensive Online Marketing strategy will boost your website trafic hence monthly sales.</p>
                                             </div>
                                         </div>
@@ -225,7 +130,7 @@ export default class Dashboard extends Component {
                                                 <img src="assets/images/service/home-4/02.jpg" alt="service"></img>
                                             </div>
                                             <div className="service-content">
-                                                <h4>Air Transmission</h4>
+                                                <h4>Blood Bank</h4>
                                                 <p>Our comprehensive Online Marketing strategy will boost your website trafic hence monthly sales.</p>
                                             </div>
                                         </div>
@@ -238,13 +143,41 @@ export default class Dashboard extends Component {
                                                 <img src="assets/images/service/home-4/03.jpg" alt="service"></img>
                                             </div>
                                             <div className="service-content">
-                                                <h4>Contaminated Objects</h4>
+                                                <h4>Testing Laboratory</h4>
                                                 <p>Our comprehensive Online Marketing strategy will boost your website trafic hence monthly sales.</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+                            <div className="row justify-content-center">
+                            <div className="col-xl-4 col-md-6 col-12 wow fadeInUp" data-wow-delay="0.3s">
+                                <div className="service-item text-center">
+                                    <div className="service-inner">
+                                        <div className="service-thumb">
+                                            <img src="assets/images/service/home-4/01.jpg" alt="service"></img>
+                                        </div>
+                                        <div className="service-content">
+                                            <h4>Chemist Outlet</h4>
+                                            <p>Our comprehensive Online Marketing strategy will boost your website trafic hence monthly sales.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="col-xl-4 col-md-6 col-12 wow fadeInUp" data-wow-delay="0.4s">
+                                <div className="service-item text-center">
+                                    <div className="service-inner">
+                                        <div className="service-thumb">
+                                            <img src="assets/images/service/home-4/02.jpg" alt="service"></img>
+                                        </div>
+                                        <div className="service-content">
+                                            <h4>Police Station</h4>
+                                            <p>Our comprehensive Online Marketing strategy will boost your website trafic hence monthly sales.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         </div>
                     </div>
                 </section>

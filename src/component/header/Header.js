@@ -1,8 +1,52 @@
 import React, { Component } from 'react';
-import {NavLink } from "react-router-dom";
+import {NavLink } from "react-router-dom"; 
+import GoogleLogin from "react-google-login";
+import { GoogleLogout } from "react-google-login";
 export default class Header extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            userDetails: {},
+            isUserLoggedIn: false
+          };
+    }
+
+    componentDidMount() {  
+        if(localStorage.getItem('currentUser')){
+            const getCurrentUserData = JSON.parse(localStorage.getItem('currentUser'));
+            console.log("getCurrentUserData",getCurrentUserData);
+            this.setState({ userDetails: getCurrentUserData, isUserLoggedIn: true });
+            
+        }
+    }
+
+    responseGoogle = response => { 
+        debugger
+        this.setState({ userDetails: response.profileObj, isUserLoggedIn: true });
+        const currentUser =  localStorage.setItem('currentUser', JSON.stringify(response.profileObj));
+        console.log("currentUser", currentUser);
+
+        if(response.error=='popup_closed_by_user'){
+            this.setState({isUserLoggedIn:false}); 
+        }
+      };
+    
+      logout = () => {
+        this.setState({isUserLoggedIn: false});
+        localStorage.removeItem("currentUser");
+      };
+
     render() {
+        const logoutStyle = {
+            background: '#8e42d1',
+            color: '#fff',
+            borderRadius: '10px',
+            fontSize: '13px',
+            padding: '3px'
+          };
+        
         return (
+ 
             <div>
                 {/* MOBILE VIEW: BEGIN */}
                 <div className="mobile-menu">
@@ -149,8 +193,55 @@ export default class Header extends Component {
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </div>
-                                    <div className="header-btn">
-                                        <a href="index-4.html#" className="lab-btn style-2"><span>are you sick</span></a>
+                                    <div className="header-btn">   
+                                                    
+
+                                                    {!this.state.isUserLoggedIn && (
+                                                        <GoogleLogin
+                                                          clientId="255684780603-9ems19esfi7lbrddcbqvd7ht148f5mv9.apps.googleusercontent.com" //TO BE CREATED
+                                                          render={renderProps => (
+                                                            <button
+                                                              className="lab-btn style-2"
+                                                              onClick={renderProps.onClick}
+                                                              disabled={renderProps.disabled}
+                                                            >
+                                                              <span>Log in with Google</span> 
+                                                            </button>
+                                                          )}
+                                                          onSuccess={this.responseGoogle}
+                                                          onFailure={this.responseGoogle}
+                                                        />
+                                                      )}
+                                                      {this.state.isUserLoggedIn && (
+                                                        <div className="userDetails-wrapper">
+                                                          <div className="details-wrapper"> 
+                                                               
+                                                            <div className="image">
+                                                              <img style={{width: "35px" , height:"35px", borderRadius:"50%"}} src={this.state.userDetails.imageUrl} />
+                                                              <GoogleLogout
+                                                              render={renderProps => (
+                                                                <button
+                                                                style={logoutStyle}
+                                                                  className="logout-button"
+                                                                  onClick={renderProps.onClick}
+                                                                >
+                                                                  Log Out
+                                                                </button>
+                                                              )}
+                                                              onLogoutSuccess={this.logout}
+                                                            />
+                                                              </div>
+                                                            <div style={{fontSize:"14px"}} >
+                                                              Welcome Mr. {this.state.userDetails.givenName}{" "}
+                                                              {this.state.userDetails.familyName}
+                                                            </div>
+                                                            <div style={{fontSize:"14px"}} ><i>{this.state.userDetails.email}</i></div>
+                                                          </div> 
+                                                        </div>
+                                                      )}
+                                    
+                                   {/*  Welcome, ${this.state.username}  <NavLink className="lab-btn style-2" to="/login"><span>Login</span></NavLink>*/}
+                                         
                                     </div>
                                 </div>
                             </div>
