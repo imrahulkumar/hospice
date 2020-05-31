@@ -6,9 +6,9 @@ export default class Shop extends Component {
     render() {
         return (
             <div>
-                <section class="shop-page padding-tb">
-                    <div class="container">
-                        <div class="row justify-content-center">
+                <section className="shop-page padding-tb">
+                    <div className="container">
+                        <div className="row justify-content-center">
                             <ProductList/>
                             <FilterProductOpt/>
                         </div>

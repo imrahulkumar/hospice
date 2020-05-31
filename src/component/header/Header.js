@@ -194,8 +194,7 @@ export default class Header extends Component {
                                             <li><a href="contact.html">Contact</a></li>
                                         </ul>
                                     </div>
-                                    <div className="header-btn">   
-                                                    
+                                    <div className="header-btn">                                                   
 
                                                     {!this.state.isUserLoggedIn && (
                                                         <GoogleLogin
