@@ -20,9 +20,6 @@ export default class Dashboard extends Component {
             covidIndiaStateList:[],
             covidIndiaTotalCaseList:{}
         };
-
-
-
     }
     componentDidMount() {
         this.GetCovidCasesList();

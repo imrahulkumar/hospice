@@ -6,13 +6,13 @@ import {ReviewStar} from '../../utils/ReviewStart'
 export default class FilterProductOpt extends Component {
     render() {
 
-        const filter = filters.map(d => {
+        const filter = filters.map((d,index) => {
             return (
-                <li><a href="shop-page.html#">{d.filterHeading}</a>
+                <li key={index}><a href="shop-page.html#">{d.filterHeading}</a>
                     <ul className="shop-submenu lab-ul">
-                        {d.filter.map(r => {
+                        {d.filter.map((r,index) => {
                             return (
-                                <li><a href="shop-page.html#">{r.name}</a></li>
+                                <li key={index + 'abc'}><a href="shop-page.html#">{r.name}</a></li>
                             )
                         })}
                     </ul>
@@ -20,9 +20,9 @@ export default class FilterProductOpt extends Component {
             )
         })
 
-        const latestProduct = latestProd.map(d => {
+        const latestProduct = latestProd.map((d,index) => {
             return (
-                <li>
+                <li key={index}>
                     <div className="product-thumb">
                         <img src={d.img} alt="shop"></img>
                     </div>
