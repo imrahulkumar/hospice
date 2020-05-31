@@ -28,7 +28,7 @@ export default class FilterProductOpt extends Component {
                     </div>
                     <div className="product-content">
                         <h6><a href="shop-page.html#">{d.product_name}</a></h6>
-                        <p><ReviewStar star={d.product_review}/> <span>({d.product_review} review)</span></p>
+                        <ReviewStar star={d.product_review}/> <span>({d.product_review} review)</span>
                         <h6>${d.product_price}</h6>
                     </div>
                 </li>

@@ -4,18 +4,31 @@ import {ReviewStar} from '../utils/ReviewStart';
 export default class ProductModal extends Component {
     constructor(props) {
         super(props)
-
         this.state={
-            isModalClose:''
-        }
-       
-     
-    }
+            isModalClose:'',
+            count:0
+        } 
+     }
     componentWillReceiveProps() {
         this.setState({
             isModalClose:this.props.modalClass
-       })  
-   }
+       })
+    }  
+
+       counterChange=(type)=>{
+              if(type === 'incr'){
+                  this.setState({                       
+                      count : this.state.count++
+                  })
+              }else{
+                this.setState({                       
+                    count : this.state.count--
+                })
+              }
+       }
+   
+
+   
     render() {
         
         return (
@@ -42,9 +55,9 @@ export default class ProductModal extends Component {
                                         </div>
                                         <div className="cart-button">
                                             <div className="cart-plus-minus">
-                                                <div className="dec qtybutton">-</div>
-                                                <input className="cart-plus-minus-box" type="text" name="qtybutton" value="0"></input>
-                                                <div className="inc qtybutton">+</div>
+                                                <div className="dec qtybutton" onChange={()=>this.counterChange('decr')}>-</div>
+                                                <input className="cart-plus-minus-box" type="text" name="qtybutton" defaultValue={this.state.count}></input>
+                                                <div className="inc qtybutton" onChange={()=>this.counterChange('incr')}>+</div>
                                             </div>
                                             <a href="shop-page.html#" className="lab-btn"><span>Add to Cart</span></a>
                                         </div>

@@ -24,9 +24,9 @@ class ProductView extends Component {
                         </div>
                         <div className="product-content">
                             <h5><a href="shop-page.html#">{d.product_name}</a></h5>
-                            <p>
+                            
                                 <ReviewStar star={d.product_review} />
-                            </p>
+                           
                             <h6>₹{d.product_price}</h6>
                         </div>
                     </div>
@@ -43,7 +43,7 @@ class ProductView extends Component {
                         </div>
                         <div className="product-content">
                             <h5><a href="shop-page.html#">{d.product_name}</a></h5>
-                            <p><ReviewStar star={d.product_review} /></p>
+                            <ReviewStar star={d.product_review} />
                             <h6>
                                 ₹{d.product_price}
                             </h6>
