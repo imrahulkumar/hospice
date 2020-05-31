@@ -8,22 +8,21 @@ export default class ProductList extends Component {
     constructor(props){
         super(props);
         this.state={
-            modal:{}
+            modal:{},
+            isModalVisible:false
         }
     }
   
 
     viewProductDetails=(e)=>{
        this.setState({
-           modal:e
+           modal:e,
+           isModalVisible:true
        })
     }
     
     render() {
-
-
         return (
-
             <div className="col-lg-9 col-12 sticky-widget">
                 <div className="shop-title d-flex flex-wrap justify-content-between">
                     <p>Showing 01 - 12 of 139 Results</p>
@@ -33,7 +32,7 @@ export default class ProductList extends Component {
                     </div>
                 </div>
                 <ProductView product={totalProductList} productView={this.viewProductDetails} />
-                <ProductModal detail={this.state.modal}/>
+                <ProductModal detail={this.state.modal} modalClass={this.state.isModalVisible ? 'show' : 'close'}/>
                 <div className="paginations">
                     <ul className="d-flex flex-wrap lab-ul justify-content-center">
                         <li>
