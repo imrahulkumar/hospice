@@ -13,7 +13,7 @@ class NearSupport extends Component {
         debugger
         const res = await Axios.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=1500&type=${type}&key=${key}`);
         let list = JSON.parse(res.request.responseText);
-        console.log(list.results)
+      
         this.setState({
             list: list.results
         })

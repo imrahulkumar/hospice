@@ -4,7 +4,7 @@ const StateCovidTableList = (props)=> {
         padding: '0px', 
       };
 
-    console.log("StateCovidTableList prop",props); 
+
         const covidStateCaseResult = props.covidStatelist.map((c, index)=>{
             return (
                  <tr key={index}>

@@ -20,7 +20,7 @@ class NearByHospital extends Component {
     getHospitalNearByLatLong = async (lat, long, key) => {
         const res = await Axios.get(`https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${lat},${long}&radius=1500&type=hospital&key=${key}`);
         let listOfHospital = JSON.parse(res.request.responseText);
-        console.log(listOfHospital.results)
+       
         this.setState({
             hospital: listOfHospital.results
         })

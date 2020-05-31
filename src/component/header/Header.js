@@ -14,7 +14,6 @@ export default class Header extends Component {
     componentDidMount() {  
         if(localStorage.getItem('currentUser')){
             const getCurrentUserData = JSON.parse(localStorage.getItem('currentUser'));
-            console.log("getCurrentUserData",getCurrentUserData);
             this.setState({ userDetails: getCurrentUserData, isUserLoggedIn: true });
             
         }
@@ -24,7 +23,7 @@ export default class Header extends Component {
         debugger
         this.setState({ userDetails: response.profileObj, isUserLoggedIn: true });
         const currentUser =  localStorage.setItem('currentUser', JSON.stringify(response.profileObj));
-        console.log("currentUser", currentUser);
+       
 
         if(response.error=='popup_closed_by_user'){
             this.setState({isUserLoggedIn:false}); 

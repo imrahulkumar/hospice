@@ -8,7 +8,6 @@ class ProductView extends Component {
 
     render() {
         const product = this.props.product.map((d, index) => {
-
             return (
 
                 <div className="col-lg-4 col-md-6 col-12" key={index}>
@@ -18,7 +17,7 @@ class ProductView extends Component {
                                 <img src={d.img} alt="shop"></img>
                             </div>
                             <div className="product-action-link">
-                                <a className="view-modal" data-target="#quick_view"><i className="icofont-eye"></i></a>
+                                <a className="view-modal" data-target="#quick_view" onClick={()=>this.props.productView(d)}><i className="icofont-eye"></i></a>
                                 <a href="shop-page.html#"><i className="icofont-heart"></i></a>
                                 <a href="shop-page.html#"><i className="icofont-cart-alt"></i></a>
                             </div>

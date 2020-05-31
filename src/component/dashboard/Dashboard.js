@@ -32,7 +32,6 @@ export default class Dashboard extends Component {
     };
     GetIndiaStateCovidList = async () => { 
         const statesResult = await Axios.get(`https://api.rootnet.in/covid19-in/stats/latest`);
-        console.log("statesResult", statesResult.data.data); 
         this.setState({ ...statesResult, covidIndiaStateList: statesResult.data.data.regional }); 
         this.setState({ ...statesResult, covidIndiaTotalCaseList: statesResult.data.data.summary}); 
         

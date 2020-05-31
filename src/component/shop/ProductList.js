@@ -1,9 +1,27 @@
 import React, { Component } from 'react';
 import ProductView from '../../utils/ProductView';
-import { totalProductList } from '../../utils/utility'
+import { totalProductList } from '../../utils/utility';
+import ProductModal from '../../utils/ProductModal'
 
 export default class ProductList extends Component {
+    
+    constructor(props){
+        super(props);
+        this.state={
+            modal:{}
+        }
+    }
+  
+
+    viewProductDetails=(e)=>{
+       this.setState({
+           modal:e
+       })
+    }
+    
     render() {
+
+
         return (
 
             <div className="col-lg-9 col-12 sticky-widget">
@@ -14,8 +32,8 @@ export default class ProductList extends Component {
                         <a data-target="list"><i className="icofont-listine-dots"></i></a>
                     </div>
                 </div>
-                <ProductView product={totalProductList} />
-
+                <ProductView product={totalProductList} productView={this.viewProductDetails} />
+                <ProductModal detail={this.state.modal}/>
                 <div className="paginations">
                     <ul className="d-flex flex-wrap lab-ul justify-content-center">
                         <li>
