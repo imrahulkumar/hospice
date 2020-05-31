@@ -4,10 +4,22 @@ import {ReviewStar} from '../utils/ReviewStart';
 export default class ProductModal extends Component {
     constructor(props) {
         super(props)
+
+        this.state={
+            isModalClose:''
+        }
+       
+     
     }
+    componentWillReceiveProps() {
+        this.setState({
+            isModalClose:this.props.modalClass
+       })  
+   }
     render() {
+        
         return (
-            <div className={"modal " + this.props.modalClass} id="quick_view">
+            <div className={"modal " + this.state.isModalClose} id="quick_view">
                 <div className="modal-dialog modal-lg modal-dialog-centered">
                     <div className="modal-content">
                         <button type="button" className="close" data-dismiss="modal"><i className="icofont-close"></i></button>
@@ -23,10 +35,8 @@ export default class ProductModal extends Component {
                                     </div>
                                     <div className="col-lg-7">
                                         <div className="product-content">
-                                            <h5><a href="shop-page.html#">{this.props.detail.product_name}</a></h5>
-                                            <p>
-                                                <ReviewStar star={this.props.detail.product_review} />
-                                            </p>
+                                            <h5><a href="shop-page.html#">{this.props.detail.product_name}</a></h5>                                            
+                                                <ReviewStar star={this.props.detail.product_review} />                                           
                                             <h6>₹{this.props.detail.product_price}</h6>
                                             <p>{this.props.detail.summary}</p>
                                         </div>
