@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import ProductView from '../../utils/ProductView';
 import { totalProductList } from '../../utils/utility';
 import ProductModal from '../../utils/ProductModal'
-
-export default class ProductList extends Component {
+import { connect } from 'react-redux';
+ class ProductList extends Component {
     
     constructor(props){
         super(props);
@@ -31,7 +31,7 @@ export default class ProductList extends Component {
                         <a data-target="list"><i className="icofont-listine-dots"></i></a>
                     </div>
                 </div>
-                <ProductView product={totalProductList} productView={this.viewProductDetails} />
+                <ProductView product={this.props.productList} productView={this.viewProductDetails} />
                 <ProductModal detail={this.state.modal} modalClass={this.state.isModalVisible ? 'show' : 'close'}/>
                 <div className="paginations">
                     <ul className="d-flex flex-wrap lab-ul justify-content-center">
@@ -63,3 +63,10 @@ export default class ProductList extends Component {
         )
     }
 }
+const mapStateToProps = state => {
+    return {
+      productList: state.category.product
+    }
+  }
+  
+  export default connect(mapStateToProps)(ProductList)

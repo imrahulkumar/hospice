@@ -69,6 +69,7 @@ export const totalProductList = [
     {
         product_name : 'Sanitizer',
         product_price: 231,
+        category_id:101,
         product_review: 4,
         summary:'ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
         img:'http://demos.codexcoder.com/labartisan/html/covid-19/assets/images/shop/01.jpg'
@@ -76,6 +77,7 @@ export const totalProductList = [
     {
         product_name : 'Dettol',
         product_price: 631,
+        category_id:105,
         product_review: 2,
         summary:'ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
         img:'assets/images/shop/02.jpg'
@@ -83,6 +85,7 @@ export const totalProductList = [
     {
         product_name : 'Mask',
         product_price: 199,
+        category_id:105,
         product_review: 3,
         summary:'ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
         img:'assets/images/shop/03.jpg'
@@ -91,6 +94,7 @@ export const totalProductList = [
     {
         product_name : 'Medicine',
         product_price: 871,
+        category_id:105,
         product_review: 5,
         summary:'ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
         img:'assets/images/shop/04.jpg'
@@ -98,12 +102,14 @@ export const totalProductList = [
     {
         product_name : 'S',
         product_price: 231,
+        category_id:105,
         product_review: 1,
         summary:'ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
         img:'assets/images/shop/05.jpg'
     },
     {
         product_name : 'Sanitizer',
+        category_id:101,
         product_price: 231,
         product_review: 4,
         summary:'ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',

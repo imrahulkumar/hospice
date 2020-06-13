@@ -1,18 +1,28 @@
 import React, { Component } from 'react';
 import { filter as filters } from '../../utils/utility.ts';
 import { latestProd } from '../../utils/utility';
-import {ReviewStar} from '../../utils/ReviewStart'
+import { ReviewStar } from '../../utils/ReviewStart'
+import { categoryChanged } from '../redux/category/categoryAction';
+import { connect } from 'react-redux';
+class FilterProductOpt extends Component {
+    constructor(props) {
+        super(props)
+    }
 
-export default class FilterProductOpt extends Component {
+
+    categoryFilter(r) {
+        this.props.categorySelectionChanged(r);        
+    }
+
     render() {
 
-        const filter = filters.map((d,index) => {
+        const filter = filters.map((d, index) => {
             return (
                 <li key={index}><a href="shop-page.html#">{d.filterHeading}</a>
                     <ul className="shop-submenu lab-ul">
-                        {d.filter.map((r,index) => {
+                        {d.filter.map((r, index) => {
                             return (
-                                <li key={index + 'abc'}><a href="shop-page.html#">{r.name}</a></li>
+                                <li key={index + 'abc'} onClick={() => this.categoryFilter(r)}><a >{r.name}</a></li>
                             )
                         })}
                     </ul>
@@ -20,7 +30,7 @@ export default class FilterProductOpt extends Component {
             )
         })
 
-        const latestProduct = latestProd.map((d,index) => {
+        const latestProduct = latestProd.map((d, index) => {
             return (
                 <li key={index}>
                     <div className="product-thumb">
@@ -28,7 +38,7 @@ export default class FilterProductOpt extends Component {
                     </div>
                     <div className="product-content">
                         <h6><a href="shop-page.html#">{d.product_name}</a></h6>
-                        <ReviewStar star={d.product_review}/> <span>({d.product_review} review)</span>
+                        <ReviewStar star={d.product_review} /> <span>({d.product_review} review)</span>
                         <h6>${d.product_price}</h6>
                     </div>
                 </li>
@@ -71,3 +81,13 @@ export default class FilterProductOpt extends Component {
         )
     }
 }
+
+
+
+const mapDispatchToProps = dispatch => {
+    return {
+        categorySelectionChanged: (r) => dispatch(categoryChanged(r))
+    }
+}
+
+export default connect(null,mapDispatchToProps)(FilterProductOpt)
