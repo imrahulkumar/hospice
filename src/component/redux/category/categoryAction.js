@@ -7,9 +7,4 @@ export const categoryChanged = (categoryType = 'all') =>{
            }
       }
 
- let filteringDataFromCategory=(categoryType)=>{
-     let categoryList = [];
-    if(categoryType.id == 101 && categoryType.name == "Sanitizer"){
-     return   categoryList =  totalProductList.filter(r => r.category_id ==categoryType.id )
-    }
- }
+ let filteringDataFromCategory=(categoryType)=> totalProductList.filter(r => r.category_id == categoryType.id);

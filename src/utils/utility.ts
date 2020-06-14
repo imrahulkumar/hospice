@@ -77,7 +77,7 @@ export const totalProductList = [
     {
         product_name : 'Dettol',
         product_price: 631,
-        category_id:105,
+        category_id:102,
         product_review: 2,
         summary:'ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
         img:'assets/images/shop/02.jpg'
@@ -100,12 +100,44 @@ export const totalProductList = [
         img:'assets/images/shop/04.jpg'
     },
     {
-        product_name : 'S',
+        product_name : 'Wheat A',
         product_price: 231,
-        category_id:105,
-        product_review: 1,
+        category_id:201,
+        product_review: 4,
         summary:'ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
-        img:'assets/images/shop/05.jpg'
+        img:'assets/images/shop/foodA.png'
+    },
+    {
+        product_name : 'Wheat B',
+        product_price: 450,
+        category_id:201,
+        product_review: 2,
+        summary:'ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
+        img:'assets/images/shop/foodA.png'
+    },
+    {
+        product_name : 'Pulses A',
+        product_price: 650,
+        category_id:202,
+        product_review: 4,
+        summary:'ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
+        img:'assets/images/shop/food.png'
+    },
+    {
+        product_name : 'Pulses B',
+        product_price: 1202,
+        category_id:202,
+        product_review: 3,
+        summary:'ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
+        img:'assets/images/shop/food.png'
+    },
+    {
+        product_name : 'Dry Fruits',
+        product_price: 530,
+        category_id:203,
+        product_review: 2,
+        summary:'ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod',
+        img:'assets/images/shop/food.png'
     },
     {
         product_name : 'Sanitizer',
