@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import ProductView from '../../utils/ProductView';
-import { totalProductList } from '../../utils/utility';
 import ProductModal from '../../utils/ProductModal'
 import { connect } from 'react-redux';
  class ProductList extends Component {

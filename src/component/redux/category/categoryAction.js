@@ -7,4 +7,4 @@ export const categoryChanged = (categoryType = 'all') =>{
            }
       }
 
- let filteringDataFromCategory=(categoryType)=> totalProductList.filter(r => r.category_id == categoryType.id);
+ let filteringDataFromCategory=(categoryType)=> totalProductList.filter(r => r.category_id === categoryType.id);

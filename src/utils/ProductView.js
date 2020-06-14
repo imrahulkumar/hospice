@@ -2,9 +2,6 @@ import React, { Component } from 'react';
 import { ReviewStar } from './ReviewStart';
 
 class ProductView extends Component {
-    constructor(props) {
-        super(props);
-    }
 
     render() {
         const product = this.props.product.map((d, index) => {
