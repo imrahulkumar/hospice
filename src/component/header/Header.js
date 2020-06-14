@@ -111,6 +111,7 @@ export default class Header extends Component {
                                     <li><a href="index-4.html#0">Shop</a>
                                         <ul className="lab-ul">
                                             <li><NavLink to="/shop">Products Page</NavLink></li>
+                                            <li><NavLink to="/cart">Cart</NavLink></li>
                                             {/* <li><a href="shop-single.html">Product Single</a></li>
                                             <li><a href="cart-page.html">Cart Page</a></li> */}
                                         </ul>
@@ -185,6 +186,7 @@ export default class Header extends Component {
                                             <li><a href="index-4.html#0">Shop</a>
                                                 <ul className="lab-ul">
                                                     <li><NavLink to="/shop">Products Page</NavLink></li>
+                                                    <li><NavLink to="/cart">Cart</NavLink></li>
                                                     {/* <li><a href="shop-single.html">Product Single</a></li>
                                                     <li><a href="cart-page.html">Cart Page</a></li> */}
                                                 </ul>
