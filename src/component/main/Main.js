@@ -7,6 +7,7 @@ import Footer from '../footer/Footer'
 import NearSupport from '../nearSupport/NearSupport';
 import Faq from '../faq/Faq'
 import Shop from '../shop/Shop';
+import Cart from '../cart/Cart'
 
 class Main extends Component {
     render() {
@@ -20,6 +21,7 @@ class Main extends Component {
                         <Route path="/near/:id" exact={true} component={NearSupport}/>
                         <Route path="/faq"  component={Faq}/>    
                         <Route path="/shop"  component={Shop}/>
+                        <Route path="/cart" component={Cart}/>
                     </Switch>
                     <Footer />
                 </Router>
